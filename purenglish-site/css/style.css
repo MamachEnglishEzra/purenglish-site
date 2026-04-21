@@ -4,7 +4,7 @@
   --navy: #1B3A6B;
   --gold: #C9A84C;
   --blue: #2E7DBF;
-  --bg: #F8F7F4;
+  --bg: #F0EAE0;
   --white: #FFFFFF;
   --text: #2C2C2C;
   --text-light: #6B6B6B;
@@ -86,7 +86,7 @@ body {
 .hero {
   position: relative;
   background: url('../assets/images/hero-banner.png') center/cover no-repeat;
-  padding: 100px 24px;
+  padding: 70px 24px;
   text-align: center;
 }
 
@@ -94,7 +94,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(27, 58, 107, 0.45);
+  background: rgba(27, 58, 107, 0.72);
 }
 
 .hero-content {
