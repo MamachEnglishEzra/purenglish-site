@@ -157,7 +157,7 @@ body {
 
 /* ── CARDS SECTION ── */
 .cards-section {
-  background: var(--white);
+  background: var(--bg);
   padding: 60px 24px;
   text-align: center;
 }
