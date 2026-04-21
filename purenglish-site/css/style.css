@@ -4,7 +4,7 @@
   --navy: #1B3A6B;
   --gold: #C9A84C;
   --blue: #2E7DBF;
-  --bg: #EEE6D8;
+  --bg: #F2EAD8;
   --white: #FFFFFF;
   --text: #2C2C2C;
   --text-light: #6B6B6B;
@@ -38,7 +38,7 @@ body {
 
 /* ── HEADER ── */
 .site-header {
-  background: var(--bg);
+  background: var(--white);
   border-bottom: 2px solid var(--gold);
   padding: 16px 24px;
   display: flex;
