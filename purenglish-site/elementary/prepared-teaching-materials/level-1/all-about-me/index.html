@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All About Me — Level 1 | PurEnglish</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5ddd0;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-light, #6B6B6B);
+    }
+    .breadcrumb a {
+      color: var(--blue, #2E7DBF);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.35rem; color: #bbb; }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--navy, #1B3A6B);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .level-badge {
+      display: inline-block;
+      background: var(--gold, #C9A84C);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0 0 0.7rem;
+      color: #fff;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Quick-Nav Strip ── */
+    .quick-nav {
+      background: #fff;
+      border-bottom: 3px solid var(--gold, #C9A84C);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .quick-nav a {
+      display: inline-block;
+      background: #F6F0E4;
+      color: var(--navy, #1B3A6B);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid #e5ddd0;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .quick-nav a:hover {
+      background: var(--gold, #C9A84C);
+      color: #fff;
+      border-color: var(--gold, #C9A84C);
+    }
+
+    /* ── Main content wrapper ── */
+    .content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ── Section Cards ── */
+    .section-card {
+      background: #fff;
+      border-radius: 10px;
+      border-top: 4px solid var(--gold, #C9A84C);
+      box-shadow: 0 2px 12px rgba(27,58,107,0.08);
+      padding: 1.75rem 2rem 2rem;
+    }
+    .section-label {
+      display: inline-block;
+      background: #F6F0E4;
+      color: var(--navy, #1B3A6B);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .section-card h2 {
+      color: var(--navy, #1B3A6B);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+
+    /* ── Teacher Tip ── */
+    .teacher-tip {
+      background: #fdf8ee;
+      border-left: 4px solid var(--gold, #C9A84C);
+      border-radius: 0 6px 6px 0;
+      padding: 0.75rem 1rem;
+      font-style: italic;
+      font-size: 0.93rem;
+      color: #555;
+      margin-bottom: 1.4rem;
+    }
+
+    /* ── YouTube Grid ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .video-grid iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* ── Drive Embeds ── */
+    .drive-embed {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+    .drive-embed.video-embed {
+      height: 520px;
+    }
+
+    /* ── Button row ── */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .btn-row a.btn-primary {
+      background: #C9A84C;
+      color: #1B3A6B;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-row a.btn-primary:hover { opacity: 0.88; }
+    .btn-row a.btn-outline {
+      background: transparent;
+      color: #1B3A6B;
+      border: 2px solid #1B3A6B;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-row a.btn-outline:hover { background: #1B3A6B; color: #fff; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .drive-embed {
+        height: 400px;
+      }
+      .drive-embed.video-embed {
+        height: 300px;
+      }
+      .page-hero h1 {
+        font-size: 1.6rem;
+      }
+      .section-card {
+        padding: 1.25rem 1.1rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span>משרד החינוך | מחוז חרדי</span>
+    <span>Ministry of Education | Haredi District</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-logo">
+      <a class="brand" href="/">PurEnglish</a>
+      <span class="tagline">Speaking &amp; Listening Resources</span>
+    </div>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/elementary/">Elementary</a></li>
+        <li><a href="/high-school/">High School</a></li>
+        <li><a href="/elementary/welcome-packet/">Welcome Packet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/elementary/">Elementary</a>
+    <span>›</span>
+    <a href="/elementary/prepared-teaching-materials/">Prepared Teaching Materials</a>
+    <span>›</span>
+    <a href="/elementary/prepared-teaching-materials/level-1/">Level 1</a>
+    <span>›</span>
+    All About Me
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="level-badge">Level 1</div>
+    <h1>All About Me</h1>
+    <p>Students learn to introduce themselves — sharing their name, age, and basic personal information.</p>
+  </section>
+
+  <!-- QUICK-NAV STRIP -->
+  <div class="quick-nav">
+    <a href="#songs">🎵 Songs &amp; Clips</a>
+    <a href="#presentation">📊 Presentation</a>
+    <a href="#flashcards">🃏 Flashcards</a>
+    <a href="#worksheet">📝 Worksheet</a>
+  </div>
+
+  <main>
+    <div class="content-wrap">
+
+      <!-- SECTION 1: Songs & Clips -->
+      <section class="section-card" id="songs">
+        <div class="section-label">🎵 Songs &amp; Clips</div>
+        <h2>Introduction &amp; Conclusion</h2>
+        <div class="teacher-tip">
+          Play one of these songs at the beginning AND end of every lesson.
+          Repetition through music builds vocabulary and helps students feel confident speaking.
+        </div>
+        <div class="video-grid">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/0kMUybkY3oc"
+            title="What's Your Name? | Finny The Shark"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/dy_BWXT6Fjc"
+            title="Hello Song for Kids (FAST) | ELF Learning"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/gjWQWjLxheQ"
+            title="My Name Is | Dream English Kids Songs"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Presentation -->
+      <section class="section-card" id="presentation">
+        <div class="section-label">📊 Presentation</div>
+        <h2>Lesson Slideshow</h2>
+        <div class="teacher-tip">
+          A ready-to-use interactive presentation for whole-class teaching.
+          Scroll through the preview below to see the full lesson flow, then download to present
+          directly from PowerPoint.
+        </div>
+        <iframe
+          class="drive-embed video-embed"
+          src="https://drive.google.com/file/d/1aldgcelXvZYLFFRwFMGxER9MpEJ5HOVe/preview"
+          title="Lesson Slideshow Preview"
+          allowfullscreen
+        ></iframe>
+        <div class="btn-row">
+          <a class="btn-primary" href="https://drive.google.com/uc?export=download&id=1mPtkM1j3DxpPiSGPvEJ463StavZ0oots" target="_blank" rel="noopener">⬇ Download PowerPoint</a>
+          <a class="btn-outline" href="https://drive.google.com/file/d/1aldgcelXvZYLFFRwFMGxER9MpEJ5HOVe/view" target="_blank" rel="noopener">↗ Open in Drive</a>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Flashcards -->
+      <section class="section-card" id="flashcards">
+        <div class="section-label">🃏 Flashcards</div>
+        <h2>Vocabulary Flashcards</h2>
+        <div class="teacher-tip">
+          Scroll through the preview to check the vocabulary set, then download
+          in your preferred format. PDF is print-ready; PowerPoint is fully editable.
+        </div>
+        <iframe
+          class="drive-embed"
+          src="https://drive.google.com/file/d/1LLGEtYJG3FHVoY2vkken17WzEJaL2vld/preview"
+          title="Vocabulary Flashcards Preview"
+          allowfullscreen
+        ></iframe>
+        <div class="btn-row">
+          <a class="btn-primary" href="https://drive.google.com/uc?export=download&id=1LLGEtYJG3FHVoY2vkken17WzEJaL2vld" target="_blank" rel="noopener">⬇ Download PDF</a>
+          <a class="btn-outline" href="https://drive.google.com/uc?export=download&id=1lIqoz3uvQIxB3-4fIHfDgzwDlM0jV45n" target="_blank" rel="noopener">⬇ Download PowerPoint</a>
+          <a class="btn-outline" href="https://drive.google.com/file/d/1LLGEtYJG3FHVoY2vkken17WzEJaL2vld/view" target="_blank" rel="noopener">↗ Open in Drive</a>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Worksheet -->
+      <section class="section-card" id="worksheet">
+        <div class="section-label">📝 Worksheet</div>
+        <h2>Student Worksheet</h2>
+        <div class="teacher-tip">
+          Scroll through the preview to confirm it matches your lesson, then
+          print one copy per student. Works well as a seatwork activity or homework.
+        </div>
+        <iframe
+          class="drive-embed"
+          src="https://drive.google.com/file/d/1Fcoe_vwZXOviDcgCzIthZJRNQctxvzev/preview"
+          title="Student Worksheet Preview"
+          allowfullscreen
+        ></iframe>
+        <div class="btn-row">
+          <a class="btn-primary" href="https://drive.google.com/uc?export=download&id=1Fcoe_vwZXOviDcgCzIthZJRNQctxvzev" target="_blank" rel="noopener">⬇ Download Worksheet</a>
+          <a class="btn-outline" href="https://drive.google.com/file/d/1Fcoe_vwZXOviDcgCzIthZJRNQctxvzev/view" target="_blank" rel="noopener">↗ Open in Drive</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-name">PurEnglish | Ministry of Education — Haredi District</p>
+    <p class="footer-copy">&copy; 2025 All rights reserved</p>
+  </footer>
+
+</body>
+</html>
