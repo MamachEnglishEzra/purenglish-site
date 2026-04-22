@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: MamachEnglishEzra/purenglish-site
+  branch: master
+  base_url: https://purenglish-site.pages.dev
+  auth_endpoint: /api/auth
+
+# Uncomment to test locally with: npx decap-server
+# local_backend: true
+
+media_folder: "purenglish-site/assets/images"
+public_folder: "/assets/images"
+
+site_url: https://purenglish-site.pages.dev
+display_url: https://purenglish-site.pages.dev
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "purenglish-site/_data/homepage.json"
+        format: json
+        fields:
+          - { label: "Hero Title",              name: "hero_title",               widget: "string" }
+          - { label: "Hero Subtitle",           name: "hero_subtitle",            widget: "string" }
+          - { label: "Hero Button — Elementary",  name: "hero_btn_elementary",    widget: "string" }
+          - { label: "Hero Button — High School", name: "hero_btn_high_school",   widget: "string" }
+          - { label: "Elementary Card Title",   name: "elementary_title",         widget: "string" }
+          - { label: "Elementary Card Description", name: "elementary_description", widget: "text" }
+          - { label: "High School Card Title",  name: "high_school_title",        widget: "string" }
+          - { label: "High School Card Description", name: "high_school_description", widget: "text" }
+
+  - name: "elementary"
+    label: "Elementary Pages"
+    folder: "purenglish-site/content/elementary"
+    create: false
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Page Title",   name: "title",       widget: "string" }
+      - { label: "Description",  name: "description", widget: "text",     required: false }
+      - { label: "Body",         name: "body",        widget: "markdown" }
+
+  - name: "high_school"
+    label: "High School Pages"
+    folder: "purenglish-site/content/high-school"
+    create: false
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Page Title",   name: "title",       widget: "string" }
+      - { label: "Description",  name: "description", widget: "text",     required: false }
+      - { label: "Body",         name: "body",        widget: "markdown" }
+
+  - name: "distance_learning"
+    label: "Distance Learning"
+    files:
+      - label: "Distance Learning Page"
+        name: "distance_learning"
+        file: "purenglish-site/content/distance-learning.md"
+        format: frontmatter
+        fields:
+          - { label: "Page Title",  name: "title",       widget: "string" }
+          - { label: "Description", name: "description", widget: "text",     required: false }
+          - { label: "Body",        name: "body",        widget: "markdown" }

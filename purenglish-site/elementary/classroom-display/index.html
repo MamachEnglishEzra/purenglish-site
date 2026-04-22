@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Display — PurEnglish</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .page-content { max-width: 860px; margin: 2.5rem auto; padding: 0 1.5rem 3rem; }
+    .page-content h1, .page-content h2 { color: #1B3A6B; }
+    .page-content h2 { margin-top: 1.75rem; }
+    .page-content a { color: #2E7DBF; }
+    .page-content ul { margin-left: 1.5rem; line-height: 2; }
+    .page-loading { color: #888; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span>משרד החינוך | מחוז חרדי</span>
+    <span>Ministry of Education | Haredi District</span>
+  </div>
+
+  <header class="site-header">
+    <div class="site-logo">
+      <a class="brand" href="/">PurEnglish</a>
+      <span class="tagline">Speaking &amp; Listening Resources</span>
+    </div>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/elementary/">Elementary</a></li>
+        <li><a href="/high-school/">High School</a></li>
+        <li><a href="/elementary/welcome-packet/">Welcome Packet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-content">
+      <p class="page-loading" id="content-body">Loading…</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-name">PurEnglish | Ministry of Education — Haredi District</p>
+    <p class="footer-copy">&copy; 2025 All rights reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    (function () {
+      var parts = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+      var mdPath = parts.length === 1
+        ? '/content/' + parts[0] + '/index.md'
+        : '/content/' + parts.join('/') + '.md';
+
+      fetch(mdPath)
+        .then(function (r) { if (!r.ok) throw new Error(); return r.text(); })
+        .then(function (text) {
+          var body = text.replace(/^---[\s\S]*?---\n/, '');
+          document.getElementById('content-body').outerHTML = '<div id="content-body">' + marked.parse(body) + '</div>';
+          var h1 = document.querySelector('#content-body h1');
+          if (h1) document.title = h1.textContent + ' — PurEnglish';
+        })
+        .catch(function () {
+          document.getElementById('content-body').textContent = 'Content coming soon.';
+        });
+    })();
+  </script>
+
+</body>
+</html>
