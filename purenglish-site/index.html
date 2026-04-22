@@ -35,11 +35,11 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Empowering Haredi English Teachers</h1>
-        <p>A complete resource library for speaking and listening instruction</p>
+        <h1 id="hero-title">Empowering Haredi English Teachers</h1>
+        <p id="hero-subtitle">A complete resource library for speaking and listening instruction</p>
         <div class="hero-buttons">
-          <a class="btn-primary" href="elementary/index.html">Elementary Resources</a>
-          <a class="btn-outline" href="high-school/index.html">High School Resources</a>
+          <a class="btn-primary" id="hero-btn-elementary" href="elementary/index.html">Elementary Resources</a>
+          <a class="btn-outline" id="hero-btn-high-school" href="high-school/index.html">High School Resources</a>
         </div>
       </div>
     </section>
@@ -52,8 +52,8 @@
         <article class="card">
           <img src="assets/images/elementary-card.png" alt="Elementary school resources" />
           <div class="card-body">
-            <h3>Elementary</h3>
-            <p>Prepared teaching materials by level and topic, classroom displays, songs, games, and assessments.</p>
+            <h3 id="elementary-title">Elementary</h3>
+            <p id="elementary-description">Prepared teaching materials by level and topic, classroom displays, songs, games, and assessments.</p>
             <a class="card-link" href="elementary/index.html">Explore Elementary →</a>
           </div>
         </article>
@@ -61,8 +61,8 @@
         <article class="card">
           <img src="assets/images/high-school-card.png" alt="High school resources" />
           <div class="card-body">
-            <h3>High School</h3>
-            <p>COBE practice materials, speaking slideshows, video clips, and exam preparation resources.</p>
+            <h3 id="high-school-title">High School</h3>
+            <p id="high-school-description">COBE practice materials, speaking slideshows, video clips, and exam preparation resources.</p>
             <a class="card-link" href="high-school/index.html">Explore High School →</a>
           </div>
         </article>
@@ -77,6 +77,23 @@
     <p class="footer-name">PurEnglish | Ministry of Education — Haredi District</p>
     <p class="footer-copy">&copy; 2025 All rights reserved</p>
   </footer>
+
+
+  <script>
+    fetch('/_data/homepage.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.hero_title)               document.getElementById('hero-title').textContent          = d.hero_title;
+        if (d.hero_subtitle)            document.getElementById('hero-subtitle').textContent       = d.hero_subtitle;
+        if (d.hero_btn_elementary)      document.getElementById('hero-btn-elementary').textContent = d.hero_btn_elementary;
+        if (d.hero_btn_high_school)     document.getElementById('hero-btn-high-school').textContent = d.hero_btn_high_school;
+        if (d.elementary_title)         document.getElementById('elementary-title').textContent    = d.elementary_title;
+        if (d.elementary_description)   document.getElementById('elementary-description').textContent = d.elementary_description;
+        if (d.high_school_title)        document.getElementById('high-school-title').textContent   = d.high_school_title;
+        if (d.high_school_description)  document.getElementById('high-school-description').textContent = d.high_school_description;
+      })
+      .catch(function () { /* keep baked-in defaults if fetch fails */ });
+  </script>
 
 </body>
 </html>
