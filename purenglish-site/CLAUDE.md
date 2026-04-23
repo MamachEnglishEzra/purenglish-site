@@ -59,6 +59,8 @@ purenglish-site/               ← site root (served by Cloudflare)
       level-1/
         all-about-me/
           index.html           ← ✅ BUILT — first fully-built topic page (template for all others)
+        school-supplies/
+          index.html           ← ✅ BUILT — migrated from old Google Sites page
     assessments/index.html     ← Shell
     classroom-display/index.html
     games/index.html
@@ -214,6 +216,7 @@ Open in Drive: `https://drive.google.com/file/d/FILE_ID/view`
 | Page | Path | Status |
 |------|------|--------|
 | All About Me (Level 1) | `/elementary/prepared-teaching-materials/level-1/all-about-me/` | ✅ Live |
+| School Supplies (Level 1) | `/elementary/prepared-teaching-materials/level-1/school-supplies/` | ✅ Built |
 
 ---
 
@@ -245,7 +248,7 @@ Legend: ✅ Fully built | 🏗️ Shell (markdown-loaded, not styled) | ⬜ Not 
   - 🏗️ Prepared teaching materials (landing) — `/elementary/prepared-teaching-materials/`
     - ⬜ Level 1 landing — `/elementary/prepared-teaching-materials/level-1/`
       - ✅ All About Me — `/elementary/prepared-teaching-materials/level-1/all-about-me/`
-      - ⬜ School Supplies
+      - ✅ School Supplies — `/elementary/prepared-teaching-materials/level-1/school-supplies/`
       - ⬜ Days of the Week
       - ⬜ Hobbies
       - ⬜ Food

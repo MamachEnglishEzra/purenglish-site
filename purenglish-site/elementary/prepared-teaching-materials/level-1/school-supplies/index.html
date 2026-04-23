@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Supplies - Level 1 | PurEnglish</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* Breadcrumb */
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5ddd0;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-light, #6B6B6B);
+    }
+    .breadcrumb a {
+      color: var(--blue, #2E7DBF);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.35rem; color: #bbb; }
+
+    /* Page hero */
+    .page-hero {
+      background: var(--navy, #1B3A6B);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .level-badge {
+      display: inline-block;
+      background: var(--gold, #C9A84C);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0 0 0.7rem;
+      color: #fff;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* Quick-nav strip */
+    .quick-nav {
+      background: #fff;
+      border-bottom: 3px solid var(--gold, #C9A84C);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: #F6F0E4;
+      color: var(--navy, #1B3A6B);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid #e5ddd0;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .quick-nav a:hover {
+      background: var(--gold, #C9A84C);
+      color: #fff;
+      border-color: var(--gold, #C9A84C);
+    }
+
+    /* Main content wrapper */
+    .content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Section cards */
+    .section-card {
+      background: #fff;
+      border-radius: 10px;
+      border-top: 4px solid var(--gold, #C9A84C);
+      box-shadow: 0 2px 12px rgba(27,58,107,0.08);
+      padding: 1.75rem 2rem 2rem;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      background: #F6F0E4;
+      color: var(--navy, #1B3A6B);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .section-card h2 {
+      color: var(--navy, #1B3A6B);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+
+    /* Teacher tip */
+    .teacher-tip {
+      background: #fdf8ee;
+      border-left: 4px solid var(--gold, #C9A84C);
+      border-radius: 0 6px 6px 0;
+      padding: 0.75rem 1rem;
+      font-style: italic;
+      font-size: 0.93rem;
+      color: #555;
+      margin-bottom: 1.4rem;
+      line-height: 1.55;
+    }
+
+    /* YouTube embed */
+    .video-embed-wrap iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Drive embeds */
+    .drive-embed {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+    .drive-embed.video-embed {
+      height: 520px;
+    }
+
+    /* Button row */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .btn-row a.btn-primary,
+    .btn-row a.btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .btn-row a.btn-primary {
+      background: #C9A84C;
+      color: #1B3A6B;
+      border: none;
+      padding: 10px 22px;
+    }
+    .btn-row a.btn-primary:hover { opacity: 0.88; }
+    .btn-row a.btn-outline {
+      background: transparent;
+      color: #1B3A6B;
+      border: 2px solid #1B3A6B;
+      padding: 8px 20px;
+    }
+    .btn-row a.btn-outline:hover { background: #1B3A6B; color: #fff; }
+
+    /* Icons */
+    .icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      vertical-align: -2px;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+    .btn-row .icon {
+      margin-right: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .drive-embed {
+        height: 400px;
+      }
+      .drive-embed.video-embed {
+        height: 300px;
+      }
+      .page-hero h1 {
+        font-size: 1.6rem;
+      }
+      .section-card {
+        padding: 1.25rem 1.1rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>&rsaquo;</span>
+    <a href="/elementary/">Elementary</a>
+    <span>&rsaquo;</span>
+    <a href="/elementary/prepared-teaching-materials/">Prepared teaching materials</a>
+    <span>&rsaquo;</span>
+    <a href="/elementary/prepared-teaching-materials/level-1/">Level 1</a>
+    <span>&rsaquo;</span>
+    School Supplies
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="level-badge">Level 1</div>
+    <h1>School Supplies</h1>
+    <p>Students learn to name classroom objects using a basic phrase. Here you'll find a song, a presentation that can also be used as flashcards, and a worksheet.</p>
+  </section>
+
+  <!-- QUICK-NAV STRIP -->
+  <div class="quick-nav">
+    <a href="#song"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/></svg>Song</a>
+    <a href="#presentation"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd"/></svg>Presentation &amp; flashcards</a>
+    <a href="#worksheet"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>Worksheet</a>
+  </div>
+
+  <main>
+    <div class="content-wrap">
+
+      <!-- SECTION 1: Song -->
+      <section class="section-card" id="song">
+        <div class="section-label"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/></svg>Song</div>
+        <h2>Introduction and conclusion</h2>
+        <div class="teacher-tip">
+          Show this song at the beginning and end of the lesson.
+          Repeating the same song helps students hear and say the new words with more confidence.
+        </div>
+        <div class="video-embed-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/41cJ0mqWses"
+            title="School supplies song"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Presentation and flashcards -->
+      <section class="section-card" id="presentation">
+        <div class="section-label"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd"/></svg>Presentation &amp; flashcards</div>
+        <h2>Lesson slideshow</h2>
+        <div class="teacher-tip">
+          Use the presentation for whole-class teaching.
+          You can also print the slides and use them as flashcards for review and practice.
+        </div>
+        <iframe
+          class="drive-embed video-embed"
+          src="https://drive.google.com/file/d/1HzGRZaj6yMo3X7STIC65bC4jCKLXTFDX/preview"
+          title="School Supplies presentation preview"
+          allowfullscreen
+        ></iframe>
+        <div class="btn-row">
+          <a class="btn-primary" href="https://drive.google.com/uc?export=download&amp;id=1KO16BzdGNw2tmk9oc96p7mULw-fVdPUe" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>Download PowerPoint</a>
+          <a class="btn-outline" href="https://drive.google.com/file/d/1HzGRZaj6yMo3X7STIC65bC4jCKLXTFDX/view" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>Open in Drive</a>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Worksheet -->
+      <section class="section-card" id="worksheet">
+        <div class="section-label"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>Worksheet</div>
+        <h2>Student worksheet</h2>
+        <div class="teacher-tip">
+          Preview the worksheet below, then print one copy per student.
+          It works well after the presentation, when students are ready to identify the objects on their own.
+        </div>
+        <iframe
+          class="drive-embed"
+          src="https://drive.google.com/file/d/1yHR5cHGKn4PKSBpcn0qXleIP3V5edOJ6/preview"
+          title="School Supplies worksheet preview"
+          allowfullscreen
+        ></iframe>
+        <div class="btn-row">
+          <a class="btn-primary" href="https://drive.google.com/uc?export=download&amp;id=1yHR5cHGKn4PKSBpcn0qXleIP3V5edOJ6" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>Download worksheet</a>
+          <a class="btn-outline" href="https://drive.google.com/file/d/1yHR5cHGKn4PKSBpcn0qXleIP3V5edOJ6/view" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>Open in Drive</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/js/components.js"></script>
+</body>
+</html>
