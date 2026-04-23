@@ -1,11 +1,12 @@
 {
   "hooks": {
-    "Stop": [
+    "PostToolUse": [
       {
+        "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"systemMessage\": \"📝 Reminder: if you added pages, changed structure, or updated dependencies this session — update CLAUDE.md so the next session has accurate context.\"}'"
+            "command": "echo '{\"systemMessage\": \"📝 Reminder: if this change affects site structure, pages, or dependencies — update CLAUDE.md.\"}'"
           }
         ]
       }
