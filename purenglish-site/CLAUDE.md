@@ -15,6 +15,15 @@ lesson materials (slideshows, flashcards, worksheets, songs) organized by school
 
 ---
 
+## End-of-Session Checklist
+
+Before closing every session:
+1. Commit and push any changes to master (directly or via PR)
+2. If a worktree branch was used but has no unique commits, confirm nothing needs pushing
+3. Verify the remote branch is clean — stale worktree branches on GitHub cause confusion
+
+---
+
 ## Stack & Deployment
 
 | What | Detail |
