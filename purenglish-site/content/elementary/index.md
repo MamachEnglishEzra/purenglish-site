@@ -5,7 +5,7 @@ description: A full library of speaking and listening materials for elementary E
 
 # Elementary Resources
 
-Welcome to the Elementary section. Browse the categories below to find materials for your classroom.
+Here you'll find all the materials we've prepared for elementary English teachers — organized by category so you can find what you need quickly.
 
 ## Categories
 

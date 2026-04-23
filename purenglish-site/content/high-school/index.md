@@ -5,7 +5,7 @@ description: Speaking and listening materials for high school English teachers, 
 
 # High School Resources
 
-Welcome to the High School section. Browse the categories below to find materials for your classroom.
+Here you'll find all the materials we've prepared for high school English teachers — organized by category so you can find what you need quickly.
 
 ## Categories
 
