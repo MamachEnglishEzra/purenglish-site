@@ -208,6 +208,94 @@ Open in Drive: `https://drive.google.com/file/d/FILE_ID/view`
 
 ---
 
+## Content Roadmap
+
+Legend: ✅ Fully built | 🏗️ Shell (markdown-loaded, not styled) | ⬜ Not started | ❓ Needs design decision
+
+> Update statuses as pages are built. "Shell" = renders markdown but lacks the full topic-page treatment (hero, quick-nav, styled section cards).
+
+### Top-level
+- ✅ Homepage — `/`
+- ✅ Sitemap — `/sitemap.html`
+- ✅ Admin panel — `/admin/`
+
+### Elementary
+- 🏗️ Elementary landing — `/elementary/`
+  - 🏗️ Welcome packet — `/elementary/welcome-packet/`
+  - 🏗️ Assessments — `/elementary/assessments/`
+  - 🏗️ Classroom display — `/elementary/classroom-display/`
+  - 🏗️ Games — `/elementary/games/`
+  - 🏗️ Songs & activities — `/elementary/songs-activities/`
+    - ⬜ Shabbat — `/elementary/songs-activities/shabbat/`
+    - ⬜ Am Yisrael Chai — `/elementary/songs-activities/am-yisrael-chai/`
+    - ⬜ Purim — `/elementary/songs-activities/purim/`
+  - 🏗️ Speaking practice — `/elementary/speaking-practice/`
+  - 🏗️ Teaching basic reading — `/elementary/teaching-basic-reading/`
+  - 🏗️ Useful links — `/elementary/useful-links/`
+    - ⬜ Speaking scripts — `/elementary/useful-links/speaking-scripts/`
+  - 🏗️ Prepared teaching materials (landing) — `/elementary/prepared-teaching-materials/`
+    - ⬜ Level 1 landing — `/elementary/prepared-teaching-materials/level-1/`
+      - ✅ All About Me — `/elementary/prepared-teaching-materials/level-1/all-about-me/`
+      - ⬜ School Supplies
+      - ⬜ Days of the Week
+      - ⬜ Hobbies
+      - ⬜ Food
+      - ⬜ Clothes
+      - ⬜ Units of Time
+      - ⬜ What Time Is It?
+    - ⬜ Level 2 landing — `/elementary/prepared-teaching-materials/level-2/`
+      - ⬜ All About Me
+      - ⬜ Weather
+      - ⬜ Transportation
+      - ⬜ Hobbies
+      - ⬜ Food
+      - ⬜ Clothes
+      - ⬜ My Day: Time and Daily Routine
+      - ⬜ Time Phrases: Past, Present, & Future
+    - ⬜ Level 3 landing — `/elementary/prepared-teaching-materials/level-3/`
+      - ⬜ All About Me
+      - ⬜ Summer Vacation
+      - ⬜ New Year
+      - ⬜ What I'm Good At
+    - ⬜ Special Days (Chagim) landing — `/elementary/prepared-teaching-materials/special-days-chagim/`
+      - ⬜ Rosh Hashanah
+      - ❓ Rachel Imenu — has level-2 and level-3 variants (no level-1). Needs multi-variable browsing solution (see design decisions below).
+      - ❓ Chanuka — has level-1, level-2, level-3 variants. Same.
+      - ⬜ Tu B'shvat
+      - ⬜ Purim
+      - ⬜ Pesach
+      - ⬜ Lag Ba'omer
+
+### High School
+- 🏗️ High school landing — `/high-school/`
+  - ❓ COBE practice — video clips and slideshows must be differentiated; don't have to be separate pages but the distinction must be clear to teachers (see design decisions below).
+  - ❓ Speaking practice — same as COBE practice above.
+  - 🏗️ Useful links — `/high-school/useful-links/`
+
+### Distance Learning
+- 🏗️ Distance learning landing — `/distance-learning/`
+  - ⬜ Audio-only lessons — `/distance-learning/audio-only-lessons/`
+
+---
+
+## Open Design Decisions
+
+These are unresolved structural/UX questions that must be decided before the affected pages can be built.
+
+### 1. Multi-variable browsing for Prepared Teaching Materials
+The current one-page-per-topic structure doesn't scale well. Teachers need to find content by multiple dimensions: level (1/2/3), topic (All About Me, Food, etc.), and time of year (Chagim). The old site's approach (separate pages per level, a separate "by month" view) is confusing. A better solution is needed — e.g. a filterable/tagged card grid on the landing page — before building out the remaining topic pages.
+
+### 2. Chagim topics with level variants (Rachel Imenu, Chanuka)
+Some Chagim topics have per-level content (e.g. Chanuka has Level 1, 2, 3). The old site gives each variant its own page. This ties into decision #1 — the multi-variable browsing solution should handle this naturally.
+
+### 3. High School: COBE Practice & Speaking Practice
+Each has two content types: video clips and slideshows. Teachers often want one or the other, so the distinction must be clear. Does not have to be separate pages — could be tabs or sections — but must not be buried.
+
+### 4. Songs & Activities subpages
+These pages (Shabbat, Am Yisrael Chai, Purim) are media-heavy (songs, video clips). They likely need a different layout from the standard topic-page template — more visual, more focused on playing/browsing content than downloading files.
+
+---
+
 ## Local Development
 
 - **Serve locally:** `npx serve purenglish-site --listen 3000` (launch config at `.claude/launch.json`)
