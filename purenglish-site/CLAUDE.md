@@ -11,6 +11,8 @@ A static HTML website for PurEnglish — a teaching resource library for English
 in Israel's Ministry of Education (Haredi District). Teachers use it to access prepared
 lesson materials (slideshows, flashcards, worksheets, songs) organized by school level and topic.
 
+**Brand guide:** `purenglish-site/brand-guide.md` — voice, tone, messaging pillars, copy rules, and community sensitivities. Read before writing or reviewing any site copy.
+
 ---
 
 ## Stack & Deployment
@@ -153,8 +155,9 @@ Copy it and swap in new content. Structure (top to bottom):
 2. **Breadcrumb bar** — `.breadcrumb` class, slim white bar with gold-bordered bottom
 3. **Page Hero** — navy bg, gold level badge pill, `<h1>`, subtitle
 4. **Quick-Nav Strip** — pill anchor links with gold bottom border → `#songs`, `#presentation`, `#flashcards`, `#worksheet`
+   - Labels use inline SVG icons (Heroicons, MIT) with `.icon` class — no emojis
 5. **Section Cards** — white cards with gold top border (4px), shadow, rounded corners. Each has:
-   - Section label badge
+   - Section label badge — uses same inline SVG + `.icon` class as quick-nav
    - `<h2>` heading
    - Teacher tip callout (gold left border, cream bg, italic)
    - Large embed (iframe)
