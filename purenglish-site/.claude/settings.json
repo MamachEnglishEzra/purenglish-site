@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"📝 Reminder: if you added pages, changed structure, or updated dependencies this session — update CLAUDE.md so the next session has accurate context.\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}
