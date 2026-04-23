@@ -24,7 +24,7 @@ lesson materials (slideshows, flashcards, worksheets, songs) organized by school
 | **Hosting** | Cloudflare Pages |
 | **Live URL** | `https://purenglish-site.pages.dev` (custom domain not yet connected) |
 | **Deploy trigger** | Push/merge to `master` → Cloudflare auto-deploys |
-| **Workflow** | commit → push → `gh pr create` → `gh pr merge` → live |
+| **Workflow** | commit → push → `gh pr create` → `gh pr merge --squash` → live |
 
 ---
 
